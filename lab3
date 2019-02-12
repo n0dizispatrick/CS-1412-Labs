@@ -1,0 +1,49 @@
+#include <stdio.h>
+
+void q3a(void)
+{
+	int t, m1,m2,m3,m4,m5,i1,i2,i3,i4,i5,fSum,sSum,total;
+	
+	printf("First value of the UPC code: \n");
+	scanf("%1d", &t);
+	
+	printf("Enter in the first set of 5 digits in the UPC code: \n");
+	scanf("%1d%1d%1d%1d%1d",&m1, &m2, &m3, &m4, &m5);
+	
+	printf("Enter in the second set of 5 digits in the UPC code: \n");
+	scanf("%1d%1d%1d%1d%1d",&i1, &i2, &i3, &i4, &i5);
+	
+	fSum = t+m2+m4+i1+i3+i5;
+	sSum = m1+m3+m5+i2+i4;
+	total = 3*fSum+sSum;
+	
+	printf("Check digit of the UPC code: %d\n", 9-(total-1)%10);
+}
+
+void inverse(int m)
+{
+	if(m>9)
+	{
+		printf("%d",m%10);
+		inverse(m/10);
+	}
+	
+	else{
+		printf("%d",m);
+	}
+}
+
+void q3b1()
+{
+	int m;
+	printf("Enter in a value to inverse: \n");
+	scanf("%d",&m);
+	inverse(m);
+}
+
+int main(void)
+{
+	q3a();
+	q3b1();
+
+}
