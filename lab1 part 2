@@ -1,0 +1,15 @@
+//	Name: Ethan Williams
+//	Section: Lab 504/Lecture 002
+//  Group 2
+//	Problem: Lab 1 Question 5
+// 	Date: 1/28/2019
+
+#include <stdio.h>
+
+int main()
+{
+
+printf(" This question is about understanding escape sequence. \n \\a sends beep to the speaker. \n \"\" means an empty string. ");
+return 0;
+
+}
