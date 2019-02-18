@@ -1,0 +1,95 @@
+//	Name: Ethan Williams
+// 	Group 2
+//	Section: Lab 504/Lecture 002
+//	Problem: Lab 4
+// 	Date: 2/19/2019
+
+
+#include <stdio.h>
+
+void buildMenu(void)
+{
+	int num;
+	char c;
+	while (num != 4)
+	{
+		printf("0) Check balance. \n");
+		printf("1) Deposit. \n");
+		printf("2) Change Password. \n");
+		printf("3) Transfer Money. \n");
+		printf("4) Exit. \n");
+		printf("Enter a number 0-4 to select a menu item: ");
+		scanf("%d",&num);
+
+		switch(num)	
+		{
+			case 0 :
+						printf("Check balance \n");
+						printf("Press any key to continue your transactions: ");
+						c = getchar();
+						c = getchar();
+						printf("\n");
+						break;
+			case 1 :
+						printf("Deposit \n");
+						printf("Press any key to continue your transactions: ");
+						c = getchar();
+						c = getchar();
+						printf("\n");
+						break;
+			case 2 :
+						printf("Change Password \n");
+						printf("Press any key to continue your transactions: ");
+						c = getchar();
+						c = getchar();
+						printf("\n");
+						break;
+			case 3 :
+						printf("Transfer Money \n");
+						printf("Press any key to continue your transactions: ");
+						c = getchar();
+						c = getchar();
+						printf("\n");
+						break;
+			case 4 :
+						printf("\n");
+						break;
+			default :
+						printf("Enter in a valid number \n");
+		}
+	}
+}
+
+void taxDue(void)
+{
+	{
+		float income;
+
+		printf("Enter amount of taxable income: ");
+		scanf("%f", &income);
+
+		printf("Tax due is: $");
+
+		if (income < 750.00f)
+			printf("%.2f", income * .01);
+		else if (income < 2250.00f)
+			printf("%.2f", 7.50f + ((income - 750.00f) * .02));
+		else if (income < 3750.00f)
+			printf("%.2f", 37.50f + ((income - 2250.00f) * .03));
+		else if (income < 5250.00f)
+			printf("%.2f", 82.50f + ((income - 3750.00f) * .04));
+		else if (income < 7000.00f)
+			printf("%.2f", 142.50f + ((income - 5250.00f) * .05));
+		else
+			printf("%.2f", 230.00f + ((income - 7000.00f) * .06));
+
+	}
+}
+
+
+int main(void)
+{
+	buildMenu();
+	taxDue();
+	return 0;
+}
