@@ -1,0 +1,51 @@
+//	Name: Ethan Williams
+// 	Group 2
+//	Section: Lab 504/Lecture 002
+//	Problem: Lab 2 Question 2 
+// 	Date: 2/5/2019
+
+#include <stdio.h>
+
+
+void q2a(void)
+{
+    int month, day, year;
+
+    printf("Enter a date with the format mm/dd/yyyy: \n");
+    scanf("%d/%d/%d", &month, &day, &year);
+
+    printf("New format for the date: %d%.2d%.2d\n\n", year, month, day);
+ 
+    
+}
+
+void repeatMess(int loopTime,int messTime)
+{
+	
+	if( loopTime >0)
+	{
+		printf("Message needs to be repeated %d times \n",messTime);
+		loopTime = loopTime -1;
+	}
+	
+	repeatMess(loopTime ,messTime);
+}
+
+
+int main()
+{
+	q2a();
+	
+	int loopTime;
+	printf("Enter a number of times a message should be repeated \n");
+	scanf("%d",&loopTime);
+	int messTime = loopTime;
+	repeatMess(loopTime,messTime);
+	
+	
+
+return 0;
+}
+
+
+
