@@ -1,0 +1,213 @@
+//	Name: Ethan Williams
+// 	Group 2
+//	Section: Lab 504/Lecture 002
+//	Problem: Lab 5
+// 	Date: 2/26/2019
+
+
+
+
+#include <stdio.h>
+
+void typeSize(void)
+{
+	int tier1 , tier2 , tier3 ;
+	printf("This is a calculator for size of a type \n");
+	printf("0) Long \n");
+	printf("1) Short \n");
+	printf("2) Int \n");
+	printf("3) Float \n");
+	printf("4) Double \n");
+	printf("5) Char \n");
+	printf("6) Exit \n");
+	
+	scanf("%d",&tier1);
+	
+	switch(tier1)
+	{
+		case 0 :
+					printf("Enter in another value for more specific type \n");
+					printf("7) Signed \n");
+					printf("8) Unsigned \n");
+					printf("9) Int \n");
+					printf("10) Double \n");
+					scanf("%d", &tier2);
+					
+					switch(tier2)
+					{
+						case 7:	
+									printf("Enter in another value to be even more specific \n");
+									printf("1) Int \n");
+									scanf("%d",&tier3);
+										switch(tier3)
+										{
+											case 1 :
+													printf("The size of long signed int is %d bytes  \n" , sizeof(long signed int));
+													break;
+											
+										}
+										break;
+						
+						case 8 :
+									printf("Enter in another value to be even more specific \n");
+									printf("1) Int \n");
+									scanf("%d",&tier3);
+										switch(tier3)
+										{
+											case 1 :
+													printf("The size of long unsigned int is %d bytes \n " , sizeof(long unsigned int));
+													break;
+											
+										}
+										break;
+						case 9 :
+									printf("The size of long int is %d bytes  \n", sizeof(long int));
+									break;
+						
+						case 10 : 
+									printf("The size of long double is %d bytes  \n", sizeof(long double));
+									break;
+						
+								
+						
+						
+					}
+					break;
+					
+		
+		case 1:
+					printf("Enter in another value for more specific type \n");
+					printf("7) Signed \n");
+					printf("8) Unsigned \n");
+					printf("9) Int \n");
+					scanf("%d", &tier2);
+					
+					case 7:	
+									printf("Enter in another value to be even more specific \n");
+									printf("1) Int \n");
+									scanf("%d",&tier3);
+										switch(tier3)
+										{
+											case 1 :
+													printf("The size of short signed int is %d bytes \n " , sizeof(short signed int));
+													break;
+											
+										}
+										break;
+						
+						case 8 :
+									printf("Enter in another value to be even more specific \n");
+									printf("1) Int \n");
+									scanf("%d",&tier3);
+										switch(tier3)
+										{
+											case 1 :
+													printf("The size of short unsigned int is %d bytes \n " , sizeof(short unsigned int));
+													break;
+											
+										}
+										break;
+						case 9 :
+									printf("The size of short int is %d bytes \n ", sizeof(short int));
+					
+									break;
+		
+		
+		case 2:
+					printf("The size of int type is %d bytes \n", sizeof(int));
+					break;
+		
+		case 3:
+					printf("The size of float type is %d bytes \n", sizeof(float));
+					break;
+		
+		case 4 : 
+					printf("The size of double type is %d bytes \n", sizeof(double));
+					break;
+		case 5 : 
+					printf("Enter in the type of char value \n");
+					printf("7) Signed \n");
+					printf("8) Unsigned \n");
+					scanf("%d",&tier2);
+							switch(tier2)
+							{
+								case 7: 
+										printf("The size of a signed char is %d bytes \n", sizeof(signed char));
+										break;
+								case 8: 
+										printf("The size of a unsigned char is %d bytes \n",sizeof(unsigned char));
+										break;
+							}
+							break;
+									
+					
+		case 6:
+					break;
+		
+		
+	}
+	
+}
+
+void numArray(void)
+{
+	printf("Enter a sequence of numbers ending in 0 \n");
+	int num,arrayNum,a[10],min;
+	num = 0;
+	
+	for(;;)
+	{
+		scanf("%d",&arrayNum);
+		if(arrayNum == 0){
+			break;
+		}
+		a[num] = arrayNum;
+		num++;
+		
+	}
+	printf("The sequence in reverse \n");
+	for(int i = num-1 ; i >= 0; i--)
+	{
+		printf("%d ", a[i]);
+	}
+	
+	min = a[0];
+	for(int t = 0; t < num;t++)
+	{
+		if(min >a[t])
+		{
+			min=a[t];
+		}
+	}
+	printf("\nThe lowest value of the sequence was %d \n", min);
+	
+	
+	
+}
+
+int main(void)
+{
+	int menuNum = 0;
+	while(menuNum != 4)
+	{
+		printf("Enter in the problem you would like: \n");
+		printf("2) Question 2 \n");
+		printf("3) Question 3 \n");
+		printf("4) Exit \n");
+		scanf("%d",&menuNum);		 
+		
+		switch(menuNum)
+		{
+			case 2: 
+					typeSize();
+					break;
+			case 3: 
+					numArray();
+					break;
+			case 4: 
+					break;
+			
+		}
+	}
+
+}
