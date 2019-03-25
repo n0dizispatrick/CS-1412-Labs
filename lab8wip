@@ -1,0 +1,39 @@
+#include <stdio.h>
+
+
+int main()
+{
+	int arr[10] , n , *a ,num,*max;
+	
+	a = arr;
+	
+	printf("Enter a sequence of numbers ending in 0 \n");
+	for(;;)
+	{
+		scanf("%d",&num);
+		if(num == 0){
+			break;
+		}
+		*(a+n) = num;
+		n++;
+		
+	}
+	printf("The sequence in reverse \n");
+	for(int i = n-1 ; i >= 0; i--)
+	{
+		printf("%d ", *(a+i)) ;
+	}
+	
+	max = a;
+	*max = *a;
+	for(int t = 1; t < n ; t++)
+	{
+		if(*(a+t) > *(max));
+		{
+			*(max) = *(a+t);
+		}
+	}
+	printf("\nThe lowest value of the sequence was %d \n", *(max));
+	
+}
+	
